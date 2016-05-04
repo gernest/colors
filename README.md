@@ -1,4 +1,4 @@
-# wren-colors
+# colors
 Terminal color library for wren programming language
 
 ### Usage
