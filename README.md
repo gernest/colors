@@ -1,6 +1,5 @@
 # wren-colors
-
-Print fancy messages to the terminal.
+Terminal color library for wren programming language
 
 ### Usage
 
