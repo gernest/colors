@@ -153,11 +153,11 @@ class AnsiPrinter {
     }
 
     // Set the styling for the forthcoming terminal output.
-    IO.writeString_("\u001b[" + modifierCodes.join(";") + "m")
+    System.writeString_("\u001b[" + modifierCodes.join(";") + "m")
 
-    IO.printList_(objects)
+    System.printList_(objects)
 
     // Reset terminal styling.
-    IO.writeString_(AnsiColors.RESET)
+    System.writeString_(AnsiColors.RESET)
   }
 }
