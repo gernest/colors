@@ -144,6 +144,10 @@ class AnsiPrinter {
   }
 
   printList_(objects) {
+    System.print(stringify(objects))
+  }
+
+  stringify(objects){
     var setModifiers = _modifiers.where {|mod|
       return mod
     }
@@ -151,13 +155,14 @@ class AnsiPrinter {
     var modifierCodes = setModifiers.map {|mod|
       return mod[2..(mod.count - 2)]
     }
+    var str=[]
+    objects.each{|obj| str.add(obj.toString)}
+    var result=[]
 
     // Set the styling for the forthcoming terminal output.
-    System.writeString_("\u001b[" + modifierCodes.join(";") + "m")
-
-    System.printList_(objects)
-
-    // Reset terminal styling.
-    System.writeString_(AnsiColors.RESET)
+    result.add("\u001b[" + modifierCodes.join(";") + "m")
+    result.add(str.join(""))
+    result.add(AnsiColors.RESET)
+    return result.join("")
   }
 }
