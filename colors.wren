@@ -67,15 +67,15 @@ class AnsiColors {
 }
 
 class AnsiPrinter {
-  new (foreground) {
+  construct new (foreground) {
     _modifiers = [foreground, null, null]
   }
 
-  new (foreground, background) {
+  construct new (foreground, background) {
     _modifiers = [foreground, background, null]
   }
 
-  new (foreground, background, style) {
+  construct new (foreground, background, style) {
     _modifiers = [foreground, background, style]
   }
 
